@@ -1,7 +1,8 @@
 from typing import Optional
 
 import aiohttp
-from const import MULLVAD_API_ACCOUNT, MULLVAD_API_CONNECTED
+
+from .const import MULLVAD_API_ACCOUNT, MULLVAD_API_CONNECTED
 
 
 class Mullvad:
