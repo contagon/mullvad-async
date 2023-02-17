@@ -7,20 +7,21 @@ This is a very simple library to pull down information from Mullvad's unofficial
 - If currently connected to Mullvad VPN
 
 An example of simple usage is
-```
+```python
 from mullvad_async import Mullvad
 import asyncio
+import aiohttp
 
-    async def main():
-        async with aiohttp.ClientSession() as session:
-            mullvad = Mullvad(session, "my_account")
+async def main():
+    async with aiohttp.ClientSession() as session:
+        mullvad = Mullvad(session, "my_account")
 
-            connected = await mullvad.is_connected()
-            
-            account = await mullvad.account_status()
-            print(account["account"]["active"])
+        connected = await mullvad.is_connected()
 
-    asyncio.run(main())
+        account = await mullvad.account_status()
+        print(account["account"]["active"])
+
+asyncio.run(main())
 ```
 
 To install run
